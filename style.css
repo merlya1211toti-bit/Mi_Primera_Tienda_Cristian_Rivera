@@ -1,0 +1,849 @@
+/* =========================================================
+   🧱 LEGO STORE - RAINBOW EDITION 🌈
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --rojo: #e30613;
+  --amarillo: #ffcf00;
+  --azul: #0072bc;
+  --verde: #00a651;
+  --naranja: #f58220;
+  --rosa: #e83e8c;
+  --morado: #8e44ad;
+  --negro: #111;
+  --blanco: #fff;
+}
+
+
+/* =========================================================
+   🌈 FONDO ARCOÍRIS
+   ========================================================= */
+
+body {
+  margin: 0;
+  padding: 35px 25px;
+
+  font-family: "Nunito", Arial, sans-serif;
+  color: var(--negro);
+  text-align: center;
+
+  /* Fondo arcoíris */
+  background:
+    linear-gradient(
+      135deg,
+      #ff3b30 0%,
+      #ff9500 16%,
+      #ffcc00 32%,
+      #34c759 48%,
+      #00a8ff 64%,
+      #5856d6 80%,
+      #af52de 100%
+    );
+
+  background-attachment: fixed;
+
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   🧱 CAPA DE BLOQUES SOBRE EL FONDO
+   ========================================================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -1;
+
+  opacity: .30;
+
+  background-image:
+    radial-gradient(
+      circle at 12px 12px,
+      rgba(255,255,255,.8) 0,
+      rgba(255,255,255,.8) 5px,
+      transparent 6px
+    );
+
+  background-size: 45px 45px;
+}
+
+
+/* =========================================================
+   🧱 TÍTULO PRINCIPAL
+   ========================================================= */
+
+h1 {
+
+  display: inline-block;
+
+  margin: 10px auto 15px;
+
+  padding: 18px 35px;
+
+  font-family: "Archivo Black", sans-serif;
+
+  font-size: clamp(30px, 5vw, 55px);
+
+  color: white;
+
+  background: var(--rojo);
+
+  border: 5px solid var(--negro);
+
+  border-radius: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: -1px;
+
+  box-shadow:
+    0 8px 0 var(--negro),
+    0 15px 30px rgba(0,0,0,.35);
+
+  text-shadow:
+    3px 3px 0 #000;
+
+  position: relative;
+}
+
+
+/* Studs del título */
+
+h1::before,
+h1::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  background: var(--rojo);
+
+  border: 3px solid var(--negro);
+
+  border-radius: 50%;
+
+  top: -15px;
+}
+
+h1::before {
+  left: 35px;
+}
+
+h1::after {
+  right: 35px;
+}
+
+
+/* =========================================================
+   ✨ SLOGAN
+   ========================================================= */
+
+.slogan {
+
+  font-family: "Archivo Black", sans-serif;
+
+  color: white;
+
+  font-size: 22px;
+
+  text-shadow:
+    2px 2px 0 #000;
+
+  margin: 25px auto;
+
+}
+
+
+/* =========================================================
+   🚚 BENEFICIOS
+   ========================================================= */
+
+.beneficios {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+  max-width: 1100px;
+
+  margin: 35px auto 45px;
+
+  padding: 18px;
+
+  background: var(--amarillo);
+
+  border: 5px solid var(--negro);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 7px 0 var(--negro),
+    0 15px 25px rgba(0,0,0,.3);
+}
+
+
+.beneficios span {
+
+  padding: 12px 18px;
+
+  background: white;
+
+  border: 3px solid var(--negro);
+
+  border-radius: 8px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 4px 0 var(--negro);
+
+  transition: .2s;
+}
+
+
+.beneficios span:hover {
+
+  transform:
+    translateY(-5px)
+    rotate(-2deg);
+
+}
+
+
+/* =========================================================
+   🧱 CATÁLOGO
+   ========================================================= */
+
+#productos {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 35px;
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  padding: 15px;
+}
+
+
+/* =========================================================
+   🧱 PRODUCTOS
+   ========================================================= */
+
+.producto {
+
+  position: relative;
+
+  background: white;
+
+  padding: 18px;
+
+  border: 5px solid var(--negro);
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 0 var(--negro),
+    0 15px 30px rgba(0,0,0,.30);
+
+  transition:
+    transform .25s,
+    box-shadow .25s;
+
+}
+
+
+/* Productos vivos */
+
+.producto:nth-child(1) {
+  border-color: var(--rojo);
+}
+
+.producto:nth-child(2) {
+  border-color: var(--amarillo);
+}
+
+.producto:nth-child(3) {
+  border-color: var(--rosa);
+}
+
+.producto:nth-child(4) {
+  border-color: var(--verde);
+}
+
+.producto:nth-child(5) {
+  border-color: var(--azul);
+}
+
+.producto:nth-child(6) {
+  border-color: var(--naranja);
+}
+
+
+/* =========================================================
+   🧱 STUDS DE CADA PRODUCTO
+   ========================================================= */
+
+.producto::before,
+.producto::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 23px;
+  height: 23px;
+
+  border-radius: 50%;
+
+  border: 4px solid var(--negro);
+
+  top: -18px;
+
+  z-index: 2;
+}
+
+
+/* Colores individuales */
+
+.producto:nth-child(1)::before,
+.producto:nth-child(1)::after {
+  background: var(--rojo);
+}
+
+.producto:nth-child(2)::before,
+.producto:nth-child(2)::after {
+  background: var(--amarillo);
+}
+
+.producto:nth-child(3)::before,
+.producto:nth-child(3)::after {
+  background: var(--rosa);
+}
+
+.producto:nth-child(4)::before,
+.producto:nth-child(4)::after {
+  background: var(--verde);
+}
+
+.producto:nth-child(5)::before,
+.producto:nth-child(5)::after {
+  background: var(--azul);
+}
+
+.producto:nth-child(6)::before,
+.producto:nth-child(6)::after {
+  background: var(--naranja);
+}
+
+
+.producto::before {
+  left: 25px;
+}
+
+.producto::after {
+  right: 25px;
+}
+
+
+/* =========================================================
+   🎨 EFECTO HOVER
+   ========================================================= */
+
+.producto:hover {
+
+  transform:
+    translateY(-12px)
+    rotate(-1deg);
+
+  box-shadow:
+    0 17px 0 var(--negro),
+    0 25px 35px rgba(0,0,0,.35);
+
+}
+
+
+/* =========================================================
+   🖼️ IMÁGENES
+   ========================================================= */
+
+.producto img {
+
+  width: 100%;
+
+  height: 190px;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+
+  background:
+
+    radial-gradient(
+      circle at 12px 12px,
+      rgba(0,0,0,.12) 0,
+      rgba(0,0,0,.12) 5px,
+      transparent 6px
+    );
+
+  background-size: 35px 35px;
+
+  border: 4px solid #eee;
+
+  transition: .3s;
+}
+
+
+.producto:hover img {
+
+  transform:
+    scale(1.05)
+    rotate(1deg);
+
+}
+
+
+/* =========================================================
+   🧱 NOMBRE
+   ========================================================= */
+
+.producto h3 {
+
+  font-family: "Archivo Black", sans-serif;
+
+  font-size: 20px;
+
+  text-transform: uppercase;
+
+  margin: 18px 0 8px;
+
+}
+
+
+/* Colores de nombres */
+
+.producto:nth-child(1) h3 {
+  color: var(--rojo);
+}
+
+.producto:nth-child(2) h3 {
+  color: #d49f00;
+}
+
+.producto:nth-child(3) h3 {
+  color: var(--rosa);
+}
+
+.producto:nth-child(4) h3 {
+  color: var(--verde);
+}
+
+.producto:nth-child(5) h3 {
+  color: var(--azul);
+}
+
+.producto:nth-child(6) h3 {
+  color: var(--naranja);
+}
+
+
+/* =========================================================
+   📝 DESCRIPCIÓN
+   ========================================================= */
+
+.descripcion {
+
+  color: #555;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  min-height: 45px;
+
+}
+
+
+/* =========================================================
+   💰 PRECIO
+   ========================================================= */
+
+.precio {
+
+  font-family: "Archivo Black", sans-serif;
+
+  color: var(--verde);
+
+  font-size: 23px;
+
+  margin: 15px 0;
+
+}
+
+
+/* =========================================================
+   🛒 BOTÓN COMPRAR
+   ========================================================= */
+
+.producto button {
+
+  width: 100%;
+
+  padding: 13px;
+
+  background: var(--verde);
+
+  color: white;
+
+  border: 4px solid var(--negro);
+
+  border-radius: 9px;
+
+  font-family: "Nunito", sans-serif;
+
+  font-weight: 900;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 var(--negro);
+
+  transition: .15s;
+}
+
+
+.producto button:hover {
+
+  background: #00c45a;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 0 var(--negro);
+
+}
+
+
+.producto button:active {
+
+  transform: translateY(3px);
+
+  box-shadow:
+    0 2px 0 var(--negro);
+
+}
+
+
+/* =========================================================
+   🛒 CARRITO
+   ========================================================= */
+
+.carrito {
+
+  position: relative;
+
+  max-width: 700px;
+
+  margin: 70px auto 30px;
+
+  padding: 30px;
+
+  background: white;
+
+  border: 6px solid var(--azul);
+
+  border-radius: 18px;
+
+  text-align: left;
+
+  box-shadow:
+    0 10px 0 var(--negro),
+    0 20px 35px rgba(0,0,0,.35);
+
+}
+
+
+/* Studs del carrito */
+
+.carrito::before,
+.carrito::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 27px;
+  height: 27px;
+
+  background: var(--azul);
+
+  border: 4px solid var(--negro);
+
+  border-radius: 50%;
+
+  top: -20px;
+}
+
+.carrito::before {
+  left: 35px;
+}
+
+.carrito::after {
+  right: 35px;
+}
+
+
+/* =========================================================
+   🛒 TÍTULO DEL CARRITO
+   ========================================================= */
+
+.carrito h2 {
+
+  font-family: "Archivo Black", sans-serif;
+
+  color: white;
+
+  background: var(--azul);
+
+  padding: 15px;
+
+  border-radius: 8px;
+
+  border: 4px solid var(--negro);
+
+  margin-top: 0;
+
+  box-shadow:
+    0 5px 0 var(--negro);
+
+}
+
+
+/* =========================================================
+   📦 PRODUCTOS DEL CARRITO
+   ========================================================= */
+
+#lista-carrito {
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+#lista-carrito li {
+
+  padding: 13px;
+
+  margin-bottom: 12px;
+
+  background: #f5f5f5;
+
+  border: 3px solid var(--negro);
+
+  border-left: 10px solid var(--amarillo);
+
+  border-radius: 8px;
+
+  font-weight: 800;
+
+}
+
+
+/* =========================================================
+   💵 RESUMEN
+   ========================================================= */
+
+.resumen {
+
+  margin-top: 20px;
+
+  padding-top: 15px;
+
+  border-top: 4px solid var(--negro);
+
+}
+
+
+.total {
+
+  font-family: "Archivo Black", sans-serif;
+
+  color: var(--verde);
+
+  font-size: 26px;
+
+}
+
+
+/* =========================================================
+   🗑️ VACIAR CARRITO
+   ========================================================= */
+
+.vaciar {
+
+  background: var(--rojo);
+
+  color: white;
+
+  padding: 13px 20px;
+
+  border: 4px solid var(--negro);
+
+  border-radius: 9px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 var(--negro);
+
+}
+
+
+.vaciar:hover {
+
+  transform: translateY(-3px);
+
+  background: #ff1e2d;
+
+}
+
+
+/* =========================================================
+   ✅ FINALIZAR
+   ========================================================= */
+
+.finalizar {
+
+  background: var(--verde);
+
+  color: white;
+
+  padding: 13px 20px;
+
+  margin-left: 8px;
+
+  border: 4px solid var(--negro);
+
+  border-radius: 9px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 var(--negro);
+
+}
+
+
+.finalizar:hover {
+
+  transform: translateY(-3px);
+
+  background: #00c45a;
+
+}
+
+
+/* =========================================================
+   🌈 DECORACIÓN INFERIOR
+   ========================================================= */
+
+body::after {
+
+  content:
+    "🟥  🟨  🟩  🟦  🟪   JUGAR • CONSTRUIR • SOÑAR   🟧  🟦  🟩";
+
+  display: block;
+
+  max-width: 800px;
+
+  margin: 70px auto 10px;
+
+  padding: 18px;
+
+  background: var(--azul);
+
+  color: white;
+
+  border: 5px solid var(--negro);
+
+  border-radius: 12px;
+
+  font-family: "Archivo Black", sans-serif;
+
+  box-shadow:
+    0 7px 0 var(--negro);
+
+}
+
+
+/* =========================================================
+   📱 RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  body {
+    padding: 25px 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+    padding: 15px 20px;
+  }
+
+  .slogan {
+    font-size: 18px;
+  }
+
+  .beneficios {
+    padding: 15px;
+  }
+
+  #productos {
+    grid-template-columns: 1fr;
+  }
+
+  .producto {
+    max-width: 350px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  .carrito {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 20px;
+  }
+
+  .finalizar {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+}
